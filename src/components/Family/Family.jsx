@@ -6,8 +6,8 @@ import PortfolioContext from '../../context/context';
 import Title from '../Title/Title';
 import ProjectImg from '../Image/ProjectImg';
 
-const Projects = () => {
-  const { projects } = useContext(PortfolioContext);
+const Family = () => {
+  const { family } = useContext(PortfolioContext);
 
   const [isDesktop, setIsDesktop] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
@@ -23,12 +23,12 @@ const Projects = () => {
   }, []);
 
   return (
-    <section id="projects">
+    <section id="family">
       <Container>
-        <div className="project-wrapper">
-          <Title title="Projetos" />
-          {projects.map((project) => {
-            const { title, info, info2, url, repo, img, id } = project;
+        <div className="family-wrapper">
+          <Title title="Família" />
+          {family.map((member) => {
+            const { title, info, info2, url, repo, img, id } = member;
 
             return (
               <Row key={id}>
@@ -40,8 +40,8 @@ const Projects = () => {
                     delay={500}
                     distance="30px"
                   >
-                    <div className="project-wrapper__text">
-                      <h3 className="project-wrapper__text-title">{title || 'Project Title'}</h3>
+                    <div className="family-wrapper__text">
+                      <h3 className="family-wrapper__text-title">{title || 'Project Title'}</h3>
                       <div>
                         <p>
                           {info ||
@@ -49,14 +49,6 @@ const Projects = () => {
                         </p>
                         <p className="mb-4">{info2 || ''}</p>
                       </div>
-                      <a
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="cta-btn cta-btn--hero"
-                        href={url || '#!'}
-                      >
-                        Saiba Mais
-                      </a>
 
                       {repo && (
                         <a
@@ -116,4 +108,4 @@ const Projects = () => {
   );
 };
 
-export default Projects;
+export default Family;
